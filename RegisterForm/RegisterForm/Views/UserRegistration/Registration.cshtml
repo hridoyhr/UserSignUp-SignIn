@@ -1,0 +1,37 @@
+﻿@model UserRegistrationModel
+
+@{
+    ViewData["Title"] = "Registration";
+}
+
+<div class="form-group row">
+    <div class="col-lg-auto">
+        <div class="card bg-dark text-center card-form">
+            <div class="card-body">
+                <h3 class="text-white-50">Sign Up Today</h3>
+                <p class="text-white-50">Please fill Out this requirement .</p>
+                <form action="/" method="post">
+                    <div class="form-group">
+                        <input asp-for="UserName" type="text" class="form-control form-control-lg" placeholder="UserName" />
+                        <span asp-validation-for="UserName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="Email" type="email" class="form-control form-control-lg" placeholder="EmailAddress" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="PhoneNumber" type="text" class="form-control form-control-lg" placeholder="PhoneNumber" />
+                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="Password" type="password" class="form-control form-control-lg" placeholder="Password" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+
+                    <input type="submit" value="Submit" class="btn btn-outline-light btn-block" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
