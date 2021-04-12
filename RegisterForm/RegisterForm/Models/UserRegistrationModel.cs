@@ -23,6 +23,8 @@ namespace RegisterForm.Models
         [Display(Name ="Mobile Phone")]
         public string PhoneNumber { get; set; }
 
+        public string City { get; set; }
+
         [Required]
         [DataType(DataType.Password)]
         [Display(Name ="Enter Password")]
