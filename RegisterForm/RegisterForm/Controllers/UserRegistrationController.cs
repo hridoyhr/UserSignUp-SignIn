@@ -10,11 +10,11 @@ namespace RegisterForm.Controllers
 {
     public class UserRegistrationController : Controller
     {
-        private readonly UserManager<IdentityUser> userManager;
-        private readonly SignInManager<IdentityUser> signInManager;
+        private readonly UserManager<ApplicationUser> userManager;
+        private readonly SignInManager<ApplicationUser> signInManager;
 
-        public UserRegistrationController(UserManager<IdentityUser> userManager,
-            SignInManager<IdentityUser> signInManager)
+        public UserRegistrationController(UserManager<ApplicationUser> userManager,
+            SignInManager<ApplicationUser> signInManager)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
@@ -29,7 +29,7 @@ namespace RegisterForm.Controllers
         [HttpPost]
         public async  Task<IActionResult> Registration(UserRegistrationModel model)
         {
-            var user = new IdentityUser { UserName = model.UserName, Email = model.Email, PhoneNumber = model.PhoneNumber, PasswordHash = model.Password };
+            var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, PhoneNumber = model.PhoneNumber, PasswordHash = model.Password };
             var result = await userManager.CreateAsync(user, model.Password);
 
             if(result.Succeeded)
